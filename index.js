@@ -5,17 +5,13 @@ function newImage(imgTemplate) {
   newIcon.style.left = imgTemplate[1];
   newIcon.style.bottom = imgTemplate[2];
   document.body.append(newIcon);
+  return newIcon;
 }
 
 function newItem(itmTemplate) {
-  let newPickUpItem = document.createElement("img");
-  newPickUpItem = itmTemplate[0];
-  newPickUpItem = "fixed";
-  newPickUpItem = itmTemplate[1];
-  newPickUpItem = itmTemplate[2];
-  document.body.append(newPickUpItem);
-  newPickUpItem.addEventListener("click", function () {
-    newPickUpItem.remove();
+  let pickUp = newImage(itmTemplate);
+  pickUp.addEventListener("dblclick", function () {
+    pickUp.remove();
   });
 }
 
@@ -27,6 +23,8 @@ const crate = ["assets/crate.png", "150px", "200px"];
 const well = ["assets/well.png", "500px", "425px"];
 
 const sword = ["assets/sword.png", "500px", "405px"];
+const shield = ["assets/shield.png", "165px", "185px"];
+const staff = ["assets/staff.png", "600px", "100px"];
 
 newImage(greenCharacter);
 newImage(pineTree);
@@ -36,3 +34,5 @@ newImage(crate);
 newImage(well);
 
 newItem(sword);
+newItem(shield);
+newItem(staff);
